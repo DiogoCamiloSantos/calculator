@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Jitterbit_Service_Worker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "MONGODB_URI": "mongodb://localhost:27017"
+      },
+      "dotnetRunMessages": true
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
