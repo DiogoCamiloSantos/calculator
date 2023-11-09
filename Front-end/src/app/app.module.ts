@@ -17,7 +17,7 @@ import CalculationRepository from 'src/core/repositories/calculation/Calculation
 import CalculationService from 'src/core/services/calculation/Calculation.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TableCalculationHistoricComponent } from './interface/components/table/table.component';
+import { TableCalculationHistoricComponent } from 'src/ui/components/table/table.component';
 
 
 @NgModule({

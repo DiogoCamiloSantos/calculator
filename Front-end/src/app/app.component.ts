@@ -4,7 +4,7 @@ import { Calculation } from 'src/core/models/calculation/Calculation.model';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import CalculationService from 'src/core/services/calculation/Calculation.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { TableCalculationHistoricComponent } from './interface/components/table/table.component';
+import { TableCalculationHistoricComponent } from 'src/ui/components/table/table.component';
 
 
 @Component({

@@ -1,9 +1,8 @@
-import {Component, ViewChild} from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Calculation } from 'src/core/models/calculation/Calculation.model';
 import CalculationService from 'src/core/services/calculation/Calculation.service';
-import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-calculation-historic-table',
