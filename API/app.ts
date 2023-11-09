@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { environment } from "./environment/environment";
 
 const express = require('express');
 const CalculatorRouter = require('./controllers/Calculator/CalculatorRouter');
@@ -8,7 +9,7 @@ var cors = require('cors');
 const App = express();
 const port = 3000;
 
-mongoose.connect('mongodb://localhost:27017/test')
+mongoose.connect(environment.mongodb)
   .then(() => console.log('Connected!'));
 
 App.listen(port, () => {

@@ -1,5 +1,6 @@
 import { connect } from 'amqplib/callback_api';
 import { AmqpQueueName } from '../models/Amqp/Amqp.enum';
+import { environment } from '../environment/environment';
 
 export class AmqpService {
 
@@ -7,7 +8,7 @@ export class AmqpService {
     }
 
     sendMessageToQueue(message: Object, queue: AmqpQueueName) {
-        connect('amqp://localhost', (error0, connection) => {
+        connect(environment.rabbitmq, (error0, connection) => {
             if (error0) {
                 throw error0;
             }
