@@ -1,8 +1,14 @@
 :host {
     td {
+        min-width: 200px;
         .options {
             display: flex;
             justify-content: center;
         }
+    }
+
+    mat-header-cell,
+    mat-cell {
+        justify-content: center;
     }
 }

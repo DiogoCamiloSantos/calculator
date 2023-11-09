@@ -1,11 +1,11 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { environment } from "src/environment/environment";
 import { Calculation } from "../../models/calculation/Calculation.model";
 import { catchError, map } from "rxjs/operators";
 import CalculationRepository from "src/core/repositories/calculation/Calculation.repository";
 import { of } from "rxjs";
-import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Injectable()
 export default class CalculationService {
@@ -24,7 +24,9 @@ export default class CalculationService {
                 calc.setId(response.Id);
                 calc.setCreatedAt(response.CreatedAt);
                 this.calculationRepository.save(calc);
-                this.matSnackBar.open('Solicitação de soma enviada!', 'Fechar'); 
+                this.matSnackBar.open('Solicitação de soma enviada!', 'Fechar', {
+                    duration: 5000
+                }); 
             })
         );
     }
@@ -37,15 +39,22 @@ export default class CalculationService {
                 calculation.setResult(response.result);
 
                 if (calculation.getResult() == null ) {
-                    this.matSnackBar.open('Soma ainda não realizada. Tente novamente mais tarde!', 'Fechar'); 
+                    this.matSnackBar.open('Soma ainda não realizada. Tente novamente mais tarde!', 'Fechar', {
+                        duration: 5000
+                    }); 
                     return;
                 }
 
                 this.calculationRepository.update(calculation);
-                this.matSnackBar.open('Soma atualizada!', 'Fechar'); 
+                this.matSnackBar.open('Soma realizada!', 'Fechar', {
+                    duration: 5000
+                }); 
             }),
             catchError((error) => {
-                this.matSnackBar.open('Cálculo não encontrado!', 'Fechar');
+                this.matSnackBar.open('Registro de cálculo não encontrado!', 'Fechar', {
+                    duration: 5000
+                });
+
                 return of(error);             
             })
         );

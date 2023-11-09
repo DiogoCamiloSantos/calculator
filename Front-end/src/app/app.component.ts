@@ -31,6 +31,10 @@ export class AppComponent {
   
   sendCalculation() {    
     const calculation = new Calculation(this.calculationForm.get('number1')?.value, this.calculationForm.get('number2')?.value)
-    this.calculationService.send(calculation).subscribe(() => this.table.updateList());
+    this.calculationService.send(calculation).subscribe(() => {
+      this.table.updateList();
+      this.calculationForm.get('number1')?.setValue(0);
+      this.calculationForm.get('number2')?.setValue(0);
+    });
   }
 }
