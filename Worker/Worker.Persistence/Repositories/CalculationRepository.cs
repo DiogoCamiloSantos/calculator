@@ -16,7 +16,7 @@ namespace Worker.Persistence.Repositories
 
         public CalculationRepository()
         {
-			var connectionString = "mongodb://localhost:27017";
+			var connectionString = Environment.GetEnvironmentVariable(DATABASE_URI);
 
             if (connectionString == null)
 			{
