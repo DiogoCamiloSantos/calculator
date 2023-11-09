@@ -10,8 +10,8 @@ Rodar os seguintes comandos:<br>
 <strong>npm start</strong>
 
 host padrão para os projetos em execução:<br>
-API: [local](https://localhost:3000)
-Front-end: [local](https://localhost:4200)
+API: [local](http://localhost:3000)
+Front-end: [local](http://localhost:4200)
 
 <p>Projeto Worker (.Net Core):<br>
 Na raíz do projeto, abrir o arquivo "Jitterbit Service Worker.sln" para executar a partir do Visual Studio.<br>
