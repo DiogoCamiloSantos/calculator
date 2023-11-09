@@ -5,13 +5,6 @@ import { Calculation } from 'src/core/models/calculation/Calculation.model';
 import CalculationService from 'src/core/services/calculation/Calculation.service';
 import { MatPaginator } from '@angular/material/paginator';
 
-
-export interface PeriodicElement {
-  name: string;
-  weight: number;
-  symbol: string;
-}
-
 @Component({
   selector: 'app-calculation-historic-table',
   templateUrl: './table.component.html',
@@ -33,8 +26,10 @@ export class TableCalculationHistoricComponent {
   }
   
   getResult(element: Calculation) {
-    const observer = this.calculationService.getResult(element.getId()).subscribe(() =>
-      this.updateList()
+    const observer = this.calculationService.getResult(element.getId()).subscribe(() => {
+      this.updateList();
+      observer.unsubscribe();
+    }
     );
   }
 
