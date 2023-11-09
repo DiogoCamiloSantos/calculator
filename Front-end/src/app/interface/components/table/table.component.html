@@ -13,7 +13,7 @@
       <ng-container matColumnDef="result">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element"> 
-            <button *ngIf="!element.result" mat-raised-button color="primary" (click)="getResult(element)">Calcular</button>
+            <button *ngIf="!element.result" mat-raised-button color="primary" (click)="getResult(element)">Buscar Resultado</button>
             <ng-container *ngIf="element.result"> {{ element.result }} </ng-container>
         </td>
       </ng-container>
